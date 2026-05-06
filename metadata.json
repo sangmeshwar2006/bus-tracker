@@ -1,0 +1,6 @@
+{
+  "name": "Where is My Bus",
+  "description": "Real-time bus tracking application for Karnataka transit commuters with glassmorphic UI and live ETA updates.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
