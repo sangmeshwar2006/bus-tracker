@@ -15,7 +15,7 @@ export default function RoutesScreen() {
             <Search className="w-5 h-5" />
           </div>
           <input 
-            className="w-full h-12 bg-white border border-outline rounded-lg pl-12 pr-4 text-on-surface placeholder:text-on-surface-variant focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm font-medium" 
+            className="w-full h-12 bg-white border border-outline rounded-lg pl-12 pr-4 text-on-surface placeholder:text-on-surface-variant focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
             placeholder="Search Route No or Place" 
             type="text" 
           />
@@ -58,7 +58,7 @@ export default function RoutesScreen() {
             <motion.div 
               key={route.id}
               whileTap={{ scale: 0.99 }}
-              className={`bg-white p-4 rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-outline shadow-sm group cursor-pointer hover:border-primary transition-all`}
+              className="bg-white p-4 rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-outline shadow-sm group cursor-pointer hover:border-primary transition-all"
               onClick={() => navigate(`/stop/SB-04`)}
             >
               <div className="flex items-center gap-4">
@@ -100,8 +100,12 @@ export default function RoutesScreen() {
         <div className="hidden lg:block space-y-4">
           <div className="bg-white rounded-lg border border-outline shadow-sm p-5">
             <h3 className="text-sm font-bold text-primary uppercase tracking-widest mb-3">Latest Info</h3>
-            <div className="aspect-video rounded-lg overflow-hidden relative mb-4 border border-outline">
-              <img className="w-full h-full object-cover grayscale opacity-80" src={IMAGES.mapPreview} alt="Map preview" />
+            <div className="aspect-video rounded-lg overflow-hidden relative mb-4 border border-outline bg-surface-container-high flex items-center justify-center">
+              {IMAGES.mapPreview ? (
+                <img className="w-full h-full object-cover grayscale opacity-80" src={IMAGES.mapPreview} alt="Map preview" />
+              ) : (
+                <div className="text-on-surface-variant text-xs font-medium text-center">Map Preview</div>
+              )}
             </div>
             <p className="text-xs text-on-surface-variant font-medium leading-relaxed">
               Minor delays on several routes due to traffic at Bidar Depo.
